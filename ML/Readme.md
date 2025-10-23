@@ -175,6 +175,5 @@ docker build --no-cache -t iris-api .
 ---
 
 **Author:** Mamatha Thippani  
-**Location:** Atlanta, GA  
-**Contact:** [LinkedIn](https://www.linkedin.com) | [GitHub](https://github.com/Mamathathippani28)
+**Git:** [GitHub](https://github.com/Mamathathippani28)
 
