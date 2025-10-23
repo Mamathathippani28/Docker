@@ -175,5 +175,5 @@ docker build --no-cache -t iris-api .
 ---
 
 **Author:** Mamatha Thippani  
-**Git:** [GitHub](https://github.com/Mamathathippani28)
+**Git:** [GitHub](https://github.com/Mamathathippani28/Docker/tree/main/ML)
 
