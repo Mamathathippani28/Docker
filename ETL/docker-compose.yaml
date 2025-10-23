@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ETL
+      MYSQL_ROOT_PASSWORD: M3sv@1528
+      MYSQL_USER: etluser
+      MYSQL_PASSWORD: etlpassword
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      # waits until the server answers to ping as root
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 20s
+  app:
+    build: .
+    container_name: assignment_etl
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_NAME: ETL
+      DB_USER: root
+      DB_PASSWORD: "M3sv@1528"
+    command: ["python", "Ass1.py"]
+    volumes:
+      - .:/app
+
+volumes:
+  db:
