@@ -166,3 +166,8 @@ docker compose down -v
 - Docker Compose File
 - Dockerfile
 - requirements.txt
+
+  ---
+**Author:** Mamatha Thippani  
+**Git:** [GitHub](https://github.com/Mamathathippani28)
+---
